@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import '../assets/signUp.css'
 
 const SignUp = () => {
@@ -7,6 +8,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [conformPassword, setConformPassword] = useState('');
+  const navigate = useNavigate()
 
   const [submitMsg, setSubmitMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
@@ -41,7 +43,8 @@ const SignUp = () => {
     } else {
         console.log('please fill up form');
         setSubmitMsg(true);
-        setErrorMsg(false)
+        setErrorMsg(false);
+        navigate('/signIn')
     }
   }
 

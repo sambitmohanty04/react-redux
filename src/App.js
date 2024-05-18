@@ -1,11 +1,13 @@
 import './App.css';
 import { useState } from 'react';
+import {BrowserRouter as Router, Route,  Routes} from 'react-router-dom';
 
 import CounterModal from './components/counterModal'
 import Header from './components/header'
 import Sidebar from './components/sidebar';
 import Home from './pages/Home';
 import SignUp from './components/signUp';
+import SignIN from './components/signIn';
 
 function App() {
 
@@ -42,9 +44,16 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
       <Header />
-      <Home />
-      <SignUp />
+        <Routes>
+          {/* <Home /> */}
+          <Route path="/" Component={Home } />
+          <Route path="/signUp" Component={SignUp} />
+          <Route path="/signIn" Component={SignIN} />
+        </Routes>
+      </Router>
+      {/* <SignUp /> */}
       {/* <div className='text-center'>
         <h3>{count}</h3>
         <input type='number' placeholder='Enter a number' onChange={handleChange} value={inputVal} />
