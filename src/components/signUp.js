@@ -79,7 +79,7 @@ const SignUp = () => {
                         <input type="password" name="confirm-password" id="confirm-password" 
                         value={conformPassword} placeholder="Confirm Password" onChange={handleConfirmPassword} />
                         <div class="login-btn">
-                            <button class="btn" type='submit' onClick={handleSubmit}> <a href="succes.html"> Submit</a></button>
+                            <button class="btn-submit" type='submit' onClick={handleSubmit}> <a href="succes.html"> Submit</a></button>
                             <p class="signup text-warning">Already have an account ? <a href="#"><span>Log In</span> </a></p>
                         </div>
                     </form>

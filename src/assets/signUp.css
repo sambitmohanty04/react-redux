@@ -57,7 +57,7 @@ input:focus{
     flex-direction:column;
 }
 
-.btn{
+.btn-submit{
     display:block;
     width:80%;
     padding:10px;
@@ -68,10 +68,10 @@ input:focus{
     font-size:14px;
     font-weight:600;
     opacity:0.8;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); 
 }
 
-.btn:hover{
+.btn-submit:hover{
     opacity:1;
 }
 

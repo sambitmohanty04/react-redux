@@ -28,7 +28,7 @@ const SignIn = () => {
                         <input type="password" class="form-control" id=""
                         onChange={handlePassword} value={password} />
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 border border-1">Submit</button>
+                    <button type="submit" class="btn-submit w-100 border border-1">Submit</button>
                 </form>
             </div>
         </div>

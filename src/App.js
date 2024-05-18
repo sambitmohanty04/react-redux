@@ -8,6 +8,7 @@ import Sidebar from './components/sidebar';
 import Home from './pages/Home';
 import SignUp from './components/signUp';
 import SignIN from './components/signIn';
+import UsersList from './components/users/usersList';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/" Component={Home } />
           <Route path="/signUp" Component={SignUp} />
           <Route path="/signIn" Component={SignIN} />
+          <Route path="/users" Component={UsersList} />
         </Routes>
       </Router>
       {/* <SignUp /> */}
