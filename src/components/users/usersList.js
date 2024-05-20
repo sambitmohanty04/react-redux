@@ -1,6 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios';
 
 const UsersList = () => {
+
+  const [users, setUsers] = useState(['']);
+
+  const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  useEffect (() => {
+    const fetchUsers = async() => {
+        try {
+            const response =  await axios.get(apiUrl);
+            setUsers(response.data);
+        } catch {
+            console.log('error in fetching data')
+        }
+    };
+    fetchUsers();
+  }, [])
+
+
+
   return (
     <>
         <div className='p-5'>
@@ -25,19 +45,22 @@ const UsersList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Image</td>
-                                <td>Otto</td>
-                                <td>gundu@gmail.com</td>
-                                <td>0000000000</td>
-                                <td>Male</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm me-2"><i class="bi bi-eye-fill"></i></button>
-                                    <button type="button" class="btn btn-info btn-sm me-2"><i class="bi bi-pencil"></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
+                            {users.map((user, index)=>(
+                                <tr>
+                                    <td key={user.id}>{index + 1}</td>
+                                    <td>Image</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.phone}</td>
+                                    <td>{user.gender || 'N/A'}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-sm me-2"><i class="bi bi-eye-fill"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm me-2"><i class="bi bi-pencil"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            ))}
+                            
                         </tbody>
                     </table>
                 </div>
